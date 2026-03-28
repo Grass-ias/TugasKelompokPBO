@@ -3,50 +3,70 @@ public class Transaksi {
     private double totalHarga;
     private String status;
     private String metodePembayaran;
+    private Tiket tiket;
+    private Pelanggan pelanggan;
 
-    public Transaksi(String nomorTransaksi, double totalHarga, String status, String metodePembayaran) {
+    public Transaksi(String nomorTransaksi, double totalHarga, String status, String metodePembayaran, Tiket tiket, Pelanggan pelanggan) {
         this.nomorTransaksi = nomorTransaksi;
         this.totalHarga = totalHarga;
         this.status = status;
         this.metodePembayaran = metodePembayaran;
+        this.tiket = tiket;
+        this.pelanggan = pelanggan;
     }
 
     public String getNomorTransaksi() {
         return nomorTransaksi;
     }
 
-    public void setNomorTransaksi(String nomorTransaksi) {
-        this.nomorTransaksi = nomorTransaksi;
-    }
-    
     public double getTotalHarga() {
         return totalHarga;
     }
 
-    public void setTotalHarga(double totalHarga) { 
-        this.totalHarga = totalHarga;
-    }
-    
     public String getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-    
     public String getMetodePembayaran() {
         return metodePembayaran;
+    }
+
+    public Tiket getTiket() {
+        return tiket;
+    }
+
+    public Pelanggan getPelanggan() {
+        return pelanggan;
+    }
+
+    public void setNomorTransaksi(String nomorTransaksi) {
+        this.nomorTransaksi = nomorTransaksi;
+    }
+
+    public void setTotalHarga(double totalHarga) {
+        this.totalHarga = totalHarga;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public void setMetodePembayaran(String metodePembayaran) {
         this.metodePembayaran = metodePembayaran;
     }
 
+    public void setTiket(Tiket tiket) {
+        this.tiket = tiket;
+    }
+
+    public void setPelanggan(Pelanggan pelanggan) {
+        this.pelanggan = pelanggan;
+    }
+
     public boolean proses() {
-        System.out.println("Memproses pembayaran via " + this.metodePembayaran);
+        System.out.println("Memproses pembayaran via " + this.metodePembayaran + " untuk " + pelanggan.getNama());
         this.status = "Lunas";
-        return true; 
+        return true;
     }
 
     public void batalkan() {

@@ -1,6 +1,5 @@
 import java.util.Date;
 import java.sql.Time;
-import java.util.List;
 
 public class JadwalTayang {
     private Date tanggal;
@@ -17,15 +16,47 @@ public class JadwalTayang {
         this.studio = studio;
     }
 
-    public int getSisaKursi() {
-        return studio.getKursiTersedia().size();
+    public Date getTanggal() {
+        return tanggal;
+    }
+
+    public Time getJamMulai() {
+        return jamMulai;
+    }
+
+    public double getHarga() {
+        return harga;
     }
 
     public Film getFilm() {
         return film;
     }
 
-    public double getHarga() {
-        return harga;
+    public Studio getStudio() {
+        return studio;
+    }
+
+    public void setTanggal(Date tanggal) {
+        this.tanggal = tanggal;
+    }
+
+    public void setJamMulai(Time jamMulai) {
+        this.jamMulai = jamMulai;
+    }
+
+    public void setHarga(double harga) {
+        this.harga = harga;
+    }
+
+    public void setFilm(Film film) {
+        this.film = film;
+    }
+
+    public void setStudio(Studio studio) {
+        this.studio = studio;
+    }
+
+    public int getSisaKursi() {
+        return studio.getKursiTersedia().size();
     }
 }

@@ -13,15 +13,45 @@ public class Tiket implements CetakBukti {
         this.kursi = kursi;
     }
 
+    public String getNomorTiket() {
+        return nomorTiket;
+    }
+
+    public Date getTanggalBeli() {
+        return tanggalBeli;
+    }
+
+    public JadwalTayang getJadwal() {
+        return jadwal;
+    }
+
+    public Kursi getKursi() {
+        return kursi;
+    }
+
+    public void setNomorTiket(String nomorTiket) {
+        this.nomorTiket = nomorTiket;
+    }
+
+    public void setTanggalBeli(Date tanggalBeli) {
+        this.tanggalBeli = tanggalBeli;
+    }
+
+    public void setJadwal(JadwalTayang jadwal) {
+        this.jadwal = jadwal;
+    }
+
+    public void setKursi(Kursi kursi) {
+        this.kursi = kursi;
+    }
+
     @Override
     public void cetakBukti() {
-        System.out.println("Tiket: " + nomorTiket + " | Film: " + jadwal.getFilm().getDetail() + " | Kursi: "
-                + kursi.getNomorKursi());
+        System.out.println("Tiket: " + getNomorTiket() + " | Film: " + getJadwal().getFilm().getDetail() + " | Kursi: "
+                + getKursi().getNomorKursi());
     }
 
     public String getDetail() {
-        return "Tiket " + nomorTiket +
-                " | Film: " + jadwal.getFilm().getDetail() +
-                " | Kursi: " + kursi.getNomorKursi();
+        return "Tiket " + getNomorTiket() + " | Film: " + getJadwal().getFilm().getDetail() + " | Kursi: " + getKursi().getNomorKursi();
     }
 }
