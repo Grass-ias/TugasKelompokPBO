@@ -12,6 +12,30 @@ public class Studio {
         this.kursiList = new ArrayList<>();
     }
 
+    public String getNamaStudio() {
+        return namaStudio;
+    }
+
+    public int getKapasitas() {
+        return kapasitas;
+    }
+
+    public List<Kursi> getKursiList() {
+        return kursiList;
+    }
+    
+    public void setNamaStudio(String namaStudio) {
+        this.namaStudio = namaStudio;
+    }
+
+    public void setKapasitas(int kapasitas) {
+        this.kapasitas = kapasitas;
+    }
+
+    public void setKursiList(List<Kursi> kursiList) {
+        this.kursiList = kursiList;
+    }
+
     public void tambahKursi(Kursi kursi) {
         kursiList.add(kursi);
     }
@@ -25,4 +49,5 @@ public class Studio {
         }
         return tersedia;
     }
+
 }
