@@ -16,4 +16,8 @@ public class Kursi {
     public void setBooked() {
         this.status = "BOOKED";
     }
+
+    public String getNomorKursi() {
+        return nomorKursi;
+    }
 }

@@ -1,4 +1,4 @@
-public class Admin extends Akun {
+public class Admin extends Akun implements CetakBukti {
     private String level;
 
     public Admin(String id, String username, String password, String email, String level) {
@@ -24,5 +24,10 @@ public class Admin extends Akun {
 
     public void kelolaStudio() {
         System.out.println("Admin mengelola kapasitas dan kursi studio");
+    }
+
+    @Override
+    public void cetakBukti() {
+        System.out.println("Bukti oleh Admin: " + getUsername());
     }
 }

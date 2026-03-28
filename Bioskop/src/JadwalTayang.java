@@ -6,20 +6,26 @@ public class JadwalTayang {
     private Date tanggal;
     private Time jamMulai;
     private double harga;
-    private List<Kursi> kursiList;
+    private Film film;
+    private Studio studio;
 
-    public JadwalTayang(Date tanggal, Time jamMulai, double harga, List<Kursi> kursiList) {
+    public JadwalTayang(Date tanggal, Time jamMulai, double harga, Film film, Studio studio) {
         this.tanggal = tanggal;
         this.jamMulai = jamMulai;
         this.harga = harga;
-        this.kursiList = kursiList;
+        this.film = film;
+        this.studio = studio;
     }
 
     public int getSisaKursi() {
-        int count = 0;
-        for (Kursi k : kursiList) {
-            if (k.isAvailable()) count++;
-        }
-        return count;
+        return studio.getKursiTersedia().size();
+    }
+
+    public Film getFilm() {
+        return film;
+    }
+
+    public double getHarga() {
+        return harga;
     }
 }
