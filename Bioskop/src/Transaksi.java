@@ -73,4 +73,15 @@ public class Transaksi {
         System.out.println("Transaksi " + this.nomorTransaksi + " dibatalkan.");
         this.status = "Dibatalkan";
     }
+
+    public void cetakStruk() {
+        System.out.println("No. Transaksi : " + this.nomorTransaksi);
+        System.out.println("Pelanggan     : " + this.pelanggan.getNama());
+        if (this.tiket != null) {
+            System.out.println("Tiket         : " + this.tiket.getDetail());
+        }
+        System.out.println("Total Bayar   : Rp" + this.totalHarga);
+        System.out.println("Pembayaran    : " + this.metodePembayaran);
+        System.out.println("Status        : " + this.status);
+    }
 }

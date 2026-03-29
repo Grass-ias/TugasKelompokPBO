@@ -44,4 +44,12 @@ public class Pelanggan extends Akun {
         System.out.println("Menampilkan riwayat transaksi milik " + this.nama);
         return this.riwayatTransaksi;
     }
+
+    public void tampilProfil() {
+        System.out.println("Username     : " + this.username);
+        System.out.println("Nama Lengkap : " + this.nama);
+        System.out.println("No. HP       : " + this.noHP);
+        System.out.println("Email        : " + this.email);
+        System.out.println("Total Order  : " + this.riwayatTransaksi.size() + " kali transaksi");
+    }
 }
