@@ -50,4 +50,10 @@ public class Studio {
         return tersedia;
     }
 
+    public void tampilInfoStudio() {
+        System.out.println("Nama Studio     : " + this.namaStudio);
+        System.out.println("Kapasitas Total : " + this.kapasitas + " kursi");
+        System.out.println("Kursi Tersedia  : " + getKursiTersedia().size() + " kursi");
+    }
+
 }

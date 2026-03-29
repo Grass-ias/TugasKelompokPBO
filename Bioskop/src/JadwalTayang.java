@@ -59,4 +59,11 @@ public class JadwalTayang {
     public int getSisaKursi() {
         return studio.getKursiTersedia().size();
     }
+
+    public void tampilInfoJadwal() {
+        System.out.println("Film   : " + this.film.getDetail());
+        System.out.println("Waktu  : " + this.tanggal + " | " + this.jamMulai);
+        System.out.println("Studio : " + this.studio.getNamaStudio() + " (Sisa kursi: " + getSisaKursi() + ")");
+        System.out.println("Harga  : Rp" + this.harga);
+    }
 }
