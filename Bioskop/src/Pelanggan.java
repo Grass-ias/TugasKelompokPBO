@@ -5,8 +5,6 @@ import java.util.Date;
 public class Pelanggan extends Akun {
     private String nama;
     private String noHP;
-
-    // Tambahan: Tempat nyimpen riwayat
     private List<Transaksi> riwayatTransaksi;
 
     public Pelanggan(String id, String username, String password, String email, String nama, String noHP) {
