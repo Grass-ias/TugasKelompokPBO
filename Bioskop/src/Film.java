@@ -5,6 +5,16 @@ public class Film {
     private String rating;
 
     public Film(String judulFilm, String genre, int durasi, String rating) {
+        if (judulFilm == null || judulFilm.trim().isEmpty()) {
+            throw new ExeptionNamaTidakValid("Judul film tidak boleh null atau kosong");
+        }
+        if (genre == null || genre.trim().isEmpty()) {
+            throw new ExeptionNamaTidakValid("Genre film tidak boleh null atau kosong");
+        }
+        if (durasi <= 0) {
+            throw new ExeptionDurasiTidakValid("Durasi film harus lebih dari 0 menit");
+        }
+        assert durasi > 0 : "Durasi harus positif";
         this.judulFilm = judulFilm;
         this.genre = genre;
         this.durasi = durasi;
@@ -16,6 +26,9 @@ public class Film {
     }
 
     public void setJudulFilm(String judulFilm) {
+        if (judulFilm == null || judulFilm.trim().isEmpty()) {
+            throw new ExeptionNamaTidakValid("Judul film tidak boleh null atau kosong");
+        }
         this.judulFilm = judulFilm;
     }
 
@@ -24,6 +37,9 @@ public class Film {
     }
 
     public void setGenre(String genre) {
+        if (genre == null || genre.trim().isEmpty()) {
+            throw new ExeptionNamaTidakValid("Genre film tidak boleh null atau kosong");
+        }
         this.genre = genre;
     }
 
@@ -32,6 +48,9 @@ public class Film {
     }
 
     public void setDurasi(int durasi) {
+        if (durasi <= 0) {
+            throw new ExeptionDurasiTidakValid("Durasi film harus lebih dari 0 menit");
+        }
         this.durasi = durasi;
     }
 

@@ -6,7 +6,18 @@ public class Transaksi {
     private Tiket tiket;
     private Pelanggan pelanggan;
 
-    public Transaksi(String nomorTransaksi, double totalHarga, String status, String metodePembayaran, Tiket tiket, Pelanggan pelanggan) {
+    public Transaksi(String nomorTransaksi, double totalHarga, String status, String metodePembayaran, Tiket tiket,
+            Pelanggan pelanggan) {
+        if (totalHarga <= 0) {
+            throw new ExeptionHargaTidakValid("Total harga transaksi harus lebih dari 0");
+        }
+        if (pelanggan == null) {
+            throw new IllegalArgumentException("Pelanggan tidak boleh null");
+        }
+        if (tiket == null) {
+            throw new IllegalArgumentException("Tiket tidak boleh null");
+        }
+        assert totalHarga > 0 : "Total harga harus positif";
         this.nomorTransaksi = nomorTransaksi;
         this.totalHarga = totalHarga;
         this.status = status;
@@ -44,6 +55,9 @@ public class Transaksi {
     }
 
     public void setTotalHarga(double totalHarga) {
+        if (totalHarga <= 0) {
+            throw new ExeptionHargaTidakValid("Total harga transaksi harus lebih dari 0");
+        }
         this.totalHarga = totalHarga;
     }
 

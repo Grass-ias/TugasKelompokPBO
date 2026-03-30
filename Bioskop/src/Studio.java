@@ -7,6 +7,13 @@ public class Studio {
     private List<Kursi> kursiList;
 
     public Studio(String namaStudio, int kapasitas) {
+        if (namaStudio == null || namaStudio.trim().isEmpty()) {
+            throw new ExeptionNamaTidakValid("Nama studio tidak boleh null atau kosong");
+        }
+        if (kapasitas <= 0) {
+            throw new ExeptionKapasitasTidakValid("Kapasitas studio harus lebih dari 0");
+        }
+        assert kapasitas > 0 : "Kapasitas harus positif";
         this.namaStudio = namaStudio;
         this.kapasitas = kapasitas;
         this.kursiList = new ArrayList<>();
@@ -23,12 +30,18 @@ public class Studio {
     public List<Kursi> getKursiList() {
         return kursiList;
     }
-    
+
     public void setNamaStudio(String namaStudio) {
+        if (namaStudio == null || namaStudio.trim().isEmpty()) {
+            throw new ExeptionNamaTidakValid("Nama studio tidak boleh null atau kosong");
+        }
         this.namaStudio = namaStudio;
     }
 
     public void setKapasitas(int kapasitas) {
+        if (kapasitas <= 0) {
+            throw new ExeptionKapasitasTidakValid("Kapasitas studio harus lebih dari 0");
+        }
         this.kapasitas = kapasitas;
     }
 
