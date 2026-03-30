@@ -9,6 +9,16 @@ public class JadwalTayang {
     private Studio studio;
 
     public JadwalTayang(Date tanggal, Time jamMulai, double harga, Film film, Studio studio) {
+        if (harga <= 0) {
+            throw new ExeptionHargaTidakValid("Harga tiket harus lebih dari 0");
+        }
+        if (film == null) {
+            throw new IllegalArgumentException("Film tidak boleh null");
+        }
+        if (studio == null) {
+            throw new IllegalArgumentException("Studio tidak boleh null");
+        }
+        assert harga > 0 : "Harga harus positif";
         this.tanggal = tanggal;
         this.jamMulai = jamMulai;
         this.harga = harga;
@@ -45,6 +55,9 @@ public class JadwalTayang {
     }
 
     public void setHarga(double harga) {
+        if (harga <= 0) {
+            throw new ExeptionHargaTidakValid("Harga tiket harus lebih dari 0");
+        }
         this.harga = harga;
     }
 

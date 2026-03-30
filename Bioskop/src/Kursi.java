@@ -4,6 +4,13 @@ public class Kursi {
     private String status;
 
     public Kursi(String nomorKursi, char baris) {
+        if (nomorKursi == null || nomorKursi.trim().isEmpty()) {
+            throw new ExeptionKursiTidakValid("Nomor kursi tidak boleh null atau kosong");
+        }
+        if (!Character.isLetter(baris)) {
+            throw new ExeptionKursiTidakValid("Baris kursi harus huruf (A-Z)");
+        }
+        assert nomorKursi.length() > 0 : "Nomor kursi harus ada";
         this.nomorKursi = nomorKursi;
         this.baris = baris;
         this.status = "AVAILABLE";
@@ -22,14 +29,23 @@ public class Kursi {
     }
 
     public void setBaris(char baris) {
+        if (!Character.isLetter(baris)) {
+            throw new ExeptionKursiTidakValid("Baris kursi harus huruf (A-Z)");
+        }
         this.baris = baris;
     }
 
     public void setStatus(String status) {
+        if (status == null || (!status.equals("AVAILABLE") && !status.equals("BOOKED"))) {
+            throw new IllegalArgumentException("Status harus AVAILABLE atau BOOKED");
+        }
         this.status = status;
     }
 
     public void setNomorKursi(String nomorKursi) {
+        if (nomorKursi == null || nomorKursi.trim().isEmpty()) {
+            throw new ExeptionKursiTidakValid("Nomor kursi tidak boleh null atau kosong");
+        }
         this.nomorKursi = nomorKursi;
     }
 
